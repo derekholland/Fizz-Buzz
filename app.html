@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>Rewind: A Coding Project By Derek Holland</title>
+    <title>FIZZ BUZZ: A Coding Project By Derek Holland</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -38,8 +38,8 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <div class="container-fluid">
         <img src="img/D-logo-1.svg" class="d-logo-nav" alt="" />
-        <a class="navbar-brand rewind" href="index.html">
-          <span class="ms-2 text-rewind">REWIND</span></a
+        <a class="navbar-brand fizz" href="index.html">
+          <span class="ms-2">FIZZ BUZZ</span></a
         >
 
         <button
@@ -59,9 +59,7 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="app.html"
-                >The App</a
-              >
+              <a class="nav-link active" href="app.html">The App</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="code.html">The Code</a>
@@ -70,7 +68,7 @@
               <a
                 class="nav-link"
                 target="_blank"
-                href="https://github.com/derekholland/Rewind"
+                href="https://github.com/derekholland/Fizz-Buzz"
                 >Git Repo</a
               >
             </li>
@@ -87,53 +85,70 @@
         <div class="row py-5 g-5 row-cols-1 row-cols-lg-2">
           <!-- coumn 1 -->
           <div class="col">
-            <h1 class="display-5 fw-bold lh-1 mb-3">
-              REWIND: A Coding Project
-            </h1>
+            <h1>FIZZ BUZZ</h1>
             <h4 class="lead pb-3">
               There and back again. A javascript coding exercise using arrays.
               Write a program that displays a string in reverse.
             </h4>
+            <div class="row">
+              <hr />
+              <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+              <h4 class="lead pb-3">
+                Write a short program that displays each number from 1-100. For
+                each multiple of 3, display "Fizz" instead of the number. For
+                each multiple of 5, display "Buzz" instead of the number. For
+                numbers which are multiples of both 3 and 5 display "FizzBuzz"
+                instead of the number.
+              </h4>
+            </div>
           </div>
           <!-- column 2 -->
           <div class="col">
-            <h5 class="border-1 border-bottom border-danger">
-              Enter A String to Reverse
-            </h5>
             <!-- row -->
             <form action="" class="row gx-3">
               <!-- column 1 -->
-              <div class="col">
+              <div class="col-6">
+                <h5>Enter a Fizz number</h5>
+
                 <input
                   type="text"
-                  id="userString"
+                  id="fizzValue"
                   class="form-control"
-                  placeholder="Enter s String"
-                  aria-label="Enter A String"
+                  placeholder="Start Value"
+                  value="3"
+                  aria-label="Start Value"
+                />
+              </div>
+              <div class="col-6">
+                <h5>Enter a Fizz number</h5>
+                <input
+                  type="text"
+                  id="buzzValue"
+                  class="form-control"
+                  placeholder="Start Value"
+                  value="5"
+                  aria-label="Start Value"
                 />
               </div>
               <!-- column 2 -->
-              <div class="col-12">
+              <div class="col-12 d-flex justify-content-end">
                 <button
                   type="button"
                   id="btnSubmit"
-                  class="btn btn-danger mt-2"
+                  class="btn btn-dark mt-2 btn-lg"
                 >
-                  Reverse Me
+                  Buzz It
                 </button>
               </div>
-              <div
-                class="alert alert-danger invisible mt-5 fade show"
-                id="alert"
-                role="alert"
-              >
-                <h4 class="alert-heading">Well Done!</h4>
-                <hr />
-                <p class="mb-0" id="msg">
-                  <!-- insert a message here-->
-                </p>
-              </div>
             </form>
+            <h2 class="mt-5 border-bottom border-2">Results</h2>
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                <tbody id="results">
+                  <!-- Results Go Here -->
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -192,6 +207,16 @@
         </div>
       </div>
     </footer>
+    <!-- template tags don't display the data? -->
+    <template id="fbTemplate">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
 
     <!-- Bootstrap JS -->
     <script
@@ -201,7 +226,7 @@
     ></script>
     <script src="js/site.js"></script>
     <script>
-      document.getElementById("btnSubmit").addEventListener("click", getValue);
+      document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
   </body>
 </html>
